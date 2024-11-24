@@ -66,3 +66,10 @@ body{
   display: block;
 }
 
+.react-multi-carousel-list ul{
+  align-self: start;
+}
+
+.mobile-menu::-webkit-scrollbar{
+  width: 1px;
+}

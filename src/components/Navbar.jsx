@@ -143,7 +143,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="mobile-menu lg:hidden fixed bg-[#e8e8ea] h-[100vh] transition-all duration-200 w-[80%] top-20 overflow-scroll z-50">
+        <div className="mobile-menu lg:hidden fixed bg-[#e8e8ea] h-[100vh] transition-all duration-200 w-[80%] top-20 overflow-scroll z-50 left-[150%]">
           <div className="mobile-links px-10 py-2 flex flex-col justify-center">
             <span className="flex items-center cursor-pointer text-2xl ">
               Move Types <IoCaretDownOutline />
