@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'quicksandbold';
+  /* font-weight: bolder; */
+  src: url('./assets/Quicksand-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'quicksand';
+  src: url('./assets/Quicksand-Bold.ttf');
+}
+@font-face {
+  font-family: 'poppins';
+  src: url('./assets/Poppins-ExtraLight.ttf');
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'quicksandbold';
+  background: #e8e8ea;
+}
+.herocontext .content{
+  font-family: 'poppins';
+}
+
+.heading, .plus{
+  font-family: 'quicksand';
+  font-weight: 900;
+}
+.linktab{
+  border: 1px solid #2b3457
+}
+.navtab span{
+  padding: 15px 0;
+}
+.linktab::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #2b3457;
+  content: '';
+}
+.l{
+  cursor: pointer;
+  color: #2b3457;
+}
+.l:hover{
+  text-decoration: underline;
+}
+
+.opt{
+  padding: 10px;
+  cursor: pointer;
+}
+.opt:hover{
+  background-color: #2b3457;
+  color: white;
+}
+.select-selected.active + .select-items {
+  display: block;
+}
+
