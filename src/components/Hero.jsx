@@ -1,105 +1,66 @@
-import { MdStar } from "react-icons/md";
-import { MdStarHalf } from "react-icons/md";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { IoIosArrowDown } from "react-icons/io";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import boxes from "../assets/moveboxes.webp";
 import mover from "../assets/removalists.webp";
 import google from "../assets/google.png";
 import users from "../assets/users.webp";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 1,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 1,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-};
+import { gsap } from "gsap";
 
 const Hero = () => {
-  // const CustomDot = ({ onClick, ...rest }) => {
-  //   const {
-  //     onMove,
-  //     index,
-  //     active,
-  //     carouselState: { currentSlide, deviceType }
-  //   } = rest;
-  //   const carouselItems = [CarouselItem1, CaourselItem2, CarouselItem3];
-  //   // onMove means if dragging or swiping in progress.
-  //   // active is provided by this lib for checking if the item is active or not.
-  //   return (
-  //     <button
-  //       className={active ? "active" : "inactive"}
-  //       onClick={() => onClick()}
-  //     >
-  //       {React.Children.toArray(carouselItems)[index]}
-  //     </button>
-  //   );
-  // };
-  // window.onscroll = () => {
-  //   const items = document.querySelector(".select-items");
+  useEffect(() => {
+    const select = document.querySelector(".select-selected");
+    const selecttext = document.querySelector(".select-selected div");
+    const items = document.querySelector(".select-items");
+    select.onclick = () => {
+      select.classList.toggle("active");
+      items.classList.toggle("show");
+    };
 
-  //   if (!(window.scrollY >= 200)) {
-  //     items.style.top = "-20%";
-  //     items.style.transform = "translate(0%, -100%)";
-  //   } else {
-  //     items.style.top = "100%";
-  //     items.style.transform = "translate(0%, -0%)";
-  //   }
-  // };
+    const opts = document.querySelectorAll(".opt");
+    opts.forEach((opt) => {
+      opt.onclick = () => {
+        selecttext.textContent = opt.textContent;
+        select.classList.remove("active");
+        items.classList.remove("show");
+      };
+    });
+  });
 
-  // function hide(e) {
-  //   const related = e.relatedTarget;
-  //   if (!select.contains(related)) {
-  //     select.classList.remove("active");
-  //     items.classList.remove("show");
-  //   }
-  // }
+  function dynamicclass(classlist, childindex) {
+    const children = document.querySelectorAll(".dynamic");
 
-  // useEffect(() => {
-  //   const select = document.querySelector(".select-selected");
-  //   const selecttext = document.querySelector(".select-selected div");
-  //   const items = document.querySelector(".select-items");
-  //   select.onclick = () => {
-  //     select.classList.toggle("active");
-  //     items.classList.toggle("show");
-  //   };
+    children.forEach((child) => {
+      child.classList.remove(classlist);
+    });
+    children[childindex].classList.add(classlist);
+  }
+  useEffect(() => {
+    setInterval(() => {
+      dynamicclass("show-text", 0);
+    }, 5000);
+    setInterval(() => {
+      dynamicclass("show-text", 1);
+    }, 10000);
+    setInterval(() => {
+      dynamicclass("show-text", 2);
+    }, 15000);
+  });
 
-  //   const opts = document.querySelectorAll(".opt");
-  //   opts.forEach((opt) => {
-  //     opt.onclick = () => {
-  //       selecttext.textContent = opt.textContent;
-  //       select.classList.remove("active");
-  //       items.classList.remove("show");
-  //     };
-  //   });
-  // });
 
   return (
     <>
-      {/* <div className="justify-between grid grid-cols-5 items-center h-[90vh] px-[100px] bg-[#e8e8ea]">
+      {/* <div className="justify-between grid grid-cols-5 items-center h-[90vh] px-[100px] bg-[#e8e8ea]  bg-[url('./assets/moveboxes.webp')] relative bg-cover bg-center">
         <div className="herocontext col-span-3 h-full pt-28">
-          <div className="heading text-[70px] leading-[65PX] text-[#2b3457]">
+          <div className="heading text-[50px] leading-[65PX] text-white">
             Find and Compare Top Removalists
           </div>
-          <div className="content pt-10 text-[24px] font-bold leading-[28px] text-[#2b3457]c">
+          <div className="content pt-10 text-[24px] font-bold leading-[28px] text-white">
             Moving House Starts Here – Compare Quotes from Quality Removalists &
             Transporters, Browse Reviews and Book Online.
           </div>
           <div className="get my-10 flex gap-5">
-            <div className="custom-select relative w-[300px] text-[#2b3457]">
+            <div className="custom-select relative w-[300px] text-black">
               <div className="in select-selected flex justify-between items-center bg-white p-[10px] border-[#fe5a50] border-4 rounded-xl cursor-pointer">
                 <div className="">Select Type of Move</div>
                 <IoIosArrowDown />
@@ -118,7 +79,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="heroimg h-full col-span-2 relative">
+        {/* <div className="heroimg h-full col-span-2 relative">
           <div className="absolute bottom-[20%] right-[0%] border bg-white p-5 rounded-xl flex gap-2">
             <img src={google} alt="" />
             <div className="flex flex-col">
@@ -148,9 +109,10 @@ const Hero = () => {
             </div>
           </div>
           <img className="h-full" src={mover} alt="" />
-        </div>
+        </div> /}
       </div> */}
-      <div className="h-[550px] max-md:h-[85vh] relative">
+
+      {/* <div className="h-[550px] max-md:h-[85vh] relative">
         <Carousel
           swipeable={true}
           draggable={true}
@@ -242,6 +204,153 @@ const Hero = () => {
             </div>
           </div>
         </Carousel>
+      </div> */}
+
+      <div className="herosection flex flex-col relative">
+        <div className="marquee w-fit relative bottom-0 flex h-[200px] max-md:h-[100px] items-end max-md:px-5 px-20 max-xl:h-[130px] mb-2 text-[80px] max-xl:text-[65px] max-md:text-[50px] max-xl:leading-[65px] max-md:leading-[50px]">
+          <span className="dynamic opacity-0 absolute top-[25%] max-md:to0%] show-text">
+            Affordable
+          </span>
+          <span className="dynamic opacity-0 absolute top-[25%] max-md:to0%]">
+            Proffessional
+          </span>
+          <span className="dynamic opacity-0 absolute top-[25%] max-md:to0%] flex w-full">
+            Stress
+          </span>
+        </div>
+
+        <div className="hero lg:h-[500px] bg-[url('./assets/moveboxes.webp')] max-lg:pb-10 relative bg-cover max-md:px-5 bg-center px-20 ">
+          <div className="text-[80px] leading-[85px] max-xl:leading-[65px] max-md:leading-[50px] w-2/3 max-lg:w-full text-white max-xl:text-[65px] max-md:text-[50px]">
+            Moving Solution You'll Ever Need
+          </div>
+
+          {/* <div className="flex gap-5 mt-20">
+            <div className="w-[200px] p-3 h-[180px] border bg-white top-[20%] left-[10%] rounded-xl flex flex-col text-center mt-10">
+              <div className="plus text-3xl font-bold text-[#fe5a50]">
+                140k+
+              </div>
+              <img src={users} className="py-2" alt="" />
+              <div className="text">
+                Australia's <span className="text-[#fe5a50]">#1</span> place to
+                find a mover
+              </div>
+            </div>
+
+            <div className="content pt-10 text-[34px] font-bold leading-[40px] text-white w-[40%]">
+              Moving House Starts Here – Compare Quotes from Quality Removalists
+              & Transporters, Browse Reviews and Book Online. <br />
+              <br />
+              Packing Your Cherished Possessions to Ensuring a Smooth Transition
+              to Your New Home
+            </div>
+          </div> */}
+
+          {/* <div className="absolute w-[80%] bottom-0 translate-y-1/2 left-[50%] -translate-x-1/2 rounded-2xl flex bg-white h-40 items-center max-lg:w-[90%]">
+            <div className="w-[350px] bg-white p-5 rounded-xl flex gap-2">
+              <img src={google} alt="" />
+              <div className="flex flex-col">
+                <div className="avg flex text-[#2b3457]">
+                  <span>4.7/5</span>
+                  <span className="flex items-center px-2">
+                    <MdStar />
+                    <MdStar />
+                    <MdStar />
+                    <MdStar />
+                    <MdStarHalf />
+                  </span>
+                  <span className="text-[#fe5a50]">Avg Rating</span>
+                </div>
+                <div className="rev">
+                  From <span className="text-[#fe5a50]">500+ </span> Google
+                  Reviews
+                </div>
+              </div>
+            </div>
+
+            <div className="content  text-[20px] font-bold leading-[18px] w-[40%]">
+              Packing Your Cherished Possessions to Ensuring a Smooth Transition
+              to Your New Home
+            </div>
+
+            <div className="w-[300px] p-3 rounded-xl flex flex-col">
+              <div className="plus flex items-center gap-2">
+                <span className="plus text-3xl font-bold text-[#fe5a50] ">140k+</span>
+                Moves Completed
+              </div>
+              <div className="text">
+                Australia's <span className="text-[#fe5a50]">#1</span> place to
+                find a mover
+              </div>
+            </div>
+          </div> */}
+
+          {/*  */}
+          <form className="lg:absolute getaquote shadow-xl drop-shadow-2xl -top-40 w-[450px] max-xl:w-[370px] max-lg:w-full max-lg:mt-10  right-10 border border-gray-300 top- p-10 bg-white rounded-xl ">
+            <div className="title text-3xl ">Request A Quote</div>
+
+            <div className="my-5 border h-[50px]">
+              <input
+                className="w-full h-full pl5 px-5"
+                type="text"
+                placeholder="Your Name"
+              />
+            </div>
+
+            <div className="my-5 border h-[50px]">
+              <input
+                className="w-full h-full pl5 px-5"
+                type="tel"
+                placeholder="Your Phone Number"
+              />
+            </div>
+
+            <div className="flex gap-5 items-center">
+              <div className="from border h-[50px]">
+                <input
+                  className="w-full h-full pl5 px-5"
+                  type="text"
+                  placeholder="From Where"
+                />
+              </div>
+
+              <div className="to border h-[50px]">
+                <input
+                  className="w-full h-full pl5 px-5"
+                  type="text"
+                  placeholder="To Where"
+                />
+              </div>
+            </div>
+
+            <div className="my-5 border h-[100px]">
+              <textarea
+                className="w-full h-full p-5 resize-none"
+                name="comments"
+                id="comments"
+                placeholder="Enter A Comment"
+              ></textarea>
+              {/* <input type="text" placeholder="Your Name" /> */}
+            </div>
+
+            <div className="custom-select relative w-full text-black">
+              <div className="in select-selected flex justify-between items-center bg-white p-[10px] border-[#fe5a50] border-4 rounded-xl cursor-pointer">
+                <div className="">Select Type of Move</div>
+                <IoIosArrowDown />
+              </div>
+              <div className="select-items hidden absolute bg-white w-full border-[#2b3457] rounded-lg border mt-2 w z-50 overflow-hidden transition-all duration-200 -translate-y-[100%] -top-[20%]">
+                <div className="opt">Select Type of Move</div>
+                <div className="opt">opt 1</div>
+                <div className="opt">opt 2</div>
+                <div className="opt">opt 3</div>
+              </div>
+            </div>
+
+            <div className="quotes flex items-center cursor-pointer pl-2 gap-3 hover:gap-5 bg-[#fe5a50] text-white text-[18px] transition-all duration-200 border-[#fe5a50] w-[170px] mt-5 py-2 rounded-lg border-4 ">
+              <span> Get Quotes</span>
+              <BiRightArrowAlt size={25} />
+            </div>
+          </form>
+        </div>
       </div>
     </>
   );
