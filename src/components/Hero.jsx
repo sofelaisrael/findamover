@@ -38,13 +38,13 @@ const Hero = () => {
   useEffect(() => {
     setInterval(() => {
       dynamicclass("show-text", 0);
-    }, 5000);
+    }, 3000);
     setInterval(() => {
       dynamicclass("show-text", 1);
-    }, 10000);
+    }, 6000);
     setInterval(() => {
       dynamicclass("show-text", 2);
-    }, 15000);
+    }, 9000);
   });
 
 
@@ -206,7 +206,7 @@ const Hero = () => {
         </Carousel>
       </div> */}
 
-      <div className="herosection flex flex-col relative">
+      <div className="herosection flex flex-col relative overflow-x-hidden">
         <div className="marquee w-fit relative bottom-0 flex h-[200px] max-md:h-[100px] items-end max-md:px-5 px-20 max-xl:h-[130px] mb-2 text-[80px] max-xl:text-[65px] max-md:text-[50px] max-xl:leading-[65px] max-md:leading-[50px]">
           <span className="dynamic opacity-0 absolute top-[25%] max-md:to0%] show-text">
             Affordable
@@ -214,8 +214,8 @@ const Hero = () => {
           <span className="dynamic opacity-0 absolute top-[25%] max-md:to0%]">
             Proffessional
           </span>
-          <span className="dynamic opacity-0 absolute top-[25%] max-md:to0%] flex w-full">
-            Stress
+          <span className="dynamic opacity-0 absolute top-[25%] max-md:to0%] flex w-[500px]">
+            Stress - Free
           </span>
         </div>
 

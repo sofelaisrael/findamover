@@ -4,8 +4,8 @@ import find from '../assets/removalists.webp'
 
 const FindaMover = () => {
   return (
-    <div className="find grid grid-cols-2  border border-y-gray-300 gap-10 px-20 pt-40">
-      <div className="text">
+    <div className="find grid grid-cols-2 max-lg:grid-cols-1  border border-y-gray-300 gap-10 px-20 pt-40 max-md:px-5 max-sm:px-0">
+      <div className="text max-sm:px-5">
         <div className="title font-['quicksand'] text-[50px] leading-[45px] font-[900]">
           How does Find a Mover work?
         </div>
@@ -26,7 +26,7 @@ const FindaMover = () => {
             <RiNumber1 />
           </div>
           <div className="cont w-[80%]">
-            <div className="head font-[900] text-[24px]">
+            <div className="head leading-[20px] font-[900] text-[24px]">
               Tell us about your move
             </div>
             <div className="co leading-[14px] text-[14px] font-[200] text-gray-400">
@@ -41,7 +41,7 @@ const FindaMover = () => {
             <RiNumber2 />
           </div>
           <div className="cont w-[80%]">
-            <div className="head font-[900] text-[24px]">
+            <div className="head leading-[20px] font-[900] text-[24px]">
               Compare quotes from removalists
             </div>
             <div className="co leading-[14px] text-[14px] font-[200] text-gray-400">
@@ -57,7 +57,7 @@ const FindaMover = () => {
             <RiNumber3 />
           </div>
           <div className="cont w-[80%]">
-            <div className="head font-[900] text-[24px]">
+            <div className="head leading-[20px] font-[900] text-[24px]">
               Choose your favourite mover
             </div>
             <div className="co leading-[14px] text-[14px] font-[200] text-gray-400">
@@ -72,7 +72,7 @@ const FindaMover = () => {
             <RiNumber4 />
           </div>
           <div className="cont w-[80%]">
-            <div className="head font-[900] text-[24px]">Leave a Review</div>
+            <div className="head leading-[20px] font-[900] text-[24px]">Leave a Review</div>
             <div className="co leading-[14px] text-[14px] font-[200] text-gray-400">
               Help out the community by leaving a review of your experience.
             </div>

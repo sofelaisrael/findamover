@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import React, { useEffect } from "react";
-import { CiStar } from "react-icons/ci"; 
+import { CiStar } from "react-icons/ci";
 import { FaTruckLoading } from "react-icons/fa";
 import { SlHourglass } from "react-icons/sl";
 import { CgSmileMouthOpen } from "react-icons/cg";
@@ -10,50 +10,52 @@ import { MdStar } from "react-icons/md";
 import { MdStarHalf } from "react-icons/md";
 
 const AboutFindaMover = () => {
-    useEffect(() => {
-        const all = document.querySelectorAll(".naag");
-        all.forEach((naag) => {
-          naag.onmouseenter = (e) => {
-            const clippath = naag.querySelector(".in");
-            const rect = clippath.getBoundingClientRect();
-    
-            clippath.style.visibility = "visible";
-    
-            gsap.to(clippath, 0.3, {
-              visibility: "visible",
-              clipPath: `circle(150% at ${e.x - rect.left}px ${e.y - rect.top}px)`,
-            });
-          };
-    
-          naag.onmouseleave = (e) => {
-            const clippath = naag.querySelector(".in");
-            const rect = clippath.getBoundingClientRect();
-    
-            gsap.to(clippath, 0.5, {
-              clipPath: `circle(0% at ${e.x - rect.left}px ${e.y - rect.top}px)`,
-            });
-            setTimeout(() => {
-              clippath.style.visibility = "hiddenx";
-            }, 1000);
-          };
+  useEffect(() => {
+    const all = document.querySelectorAll(".naag");
+    all.forEach((naag) => {
+      naag.onmouseenter = (e) => {
+        const clippath = naag.querySelector(".in");
+        const rect = clippath.getBoundingClientRect();
+
+        clippath.style.visibility = "visible";
+
+        gsap.to(clippath, 0.3, {
+          visibility: "visible",
+          clipPath: `circle(150% at ${e.x - rect.left}px ${e.y - rect.top}px)`,
         });
-        // document.querySelector(".naag").onmouseenter = (e) => {};
-      });
+      };
+
+      naag.onmouseleave = (e) => {
+        const clippath = naag.querySelector(".in");
+        const rect = clippath.getBoundingClientRect();
+
+        gsap.to(clippath, 0.5, {
+          clipPath: `circle(0% at ${e.x - rect.left}px ${e.y - rect.top}px)`,
+        });
+        setTimeout(() => {
+          clippath.style.visibility = "hiddenx";
+        }, 1000);
+      };
+    });
+    // document.querySelector(".naag").onmouseenter = (e) => {};
+  });
+
   return (
-    <div className="grid grid-cols-3 place-items-center gap-10 p-20">
+    <div className="grid grid-cols-3 place-items-center gap-10 p-20 max-lg:grid-cols-2 max-s max-md:p-10 max-sm:grid-cols-1">
+
       <div className="box">
-        <div className="naag  flex flex-col justifyenter ems-center h-[300px] relative border-black b">
-          <div className="absolute left-0 -transla2 translate-x-[0%] -translate-y-1/2 top-[50%] w-full in flex justify-enft-1/2 px-5 h-[300px] bg-[#fe5a50] flex-col py-16">
-            <div className="flex gap- flex-col abslute">
+        <div className="naag rounded-lg overflow-hidden flex flex-col justifyenter ems-center h-[300px] relative border-black b">
+          <div className="absolute left-0 translate-x-[0%] -translate-y-1/2 top-[50%] w-full in bg-[#2b3457]  flex px-5 h-[300px] flex-col py-16">
+            <div className="flex gap- flex-col text-white">
               <span>
                 <BiCalendarCheck
                   size={170}
                   className="absolute top-5 right-5"
-                  color="#fe595048"
+                  color="#ffffff93"
                 />
               </span>
               <span className="lev">
-                <BiCalendarCheck size={50} color="#fe5a50" />
+                <BiCalendarCheck size={50} color="#fff" />
               </span>
               <div className="side flex flex-col gap-5">
                 <span className="text-[32px] font-[900]">140,000+</span>
@@ -63,10 +65,18 @@ const AboutFindaMover = () => {
               </div>
             </div>
           </div>
-          <div className="relativ bottom-0 bord border-black flex flex-col justify-cen py-16 gap-2 mt- h-[300px] px-5 abolute bg-[#2b3457ab] text-white">
+
+          <div className="relativ bottom-0 bord border-black flex flex-col justify-cen py-16 gap-2 mt- h-[300px] px-5 abolute bg-[white">
             <div className="flex gap- flex-col">
               <span>
-                <BiCalendarCheck size={50} color="#fff" />
+                <BiCalendarCheck
+                  size={170}
+                  className="absolute top-5 right-5"
+                  color="#fe5a5048"
+                />
+              </span>
+              <span>
+                <BiCalendarCheck size={50} color="#fe5a50" />
               </span>
               <div className="side flex flex-col gap-5">
                 <span className="text-[32px] font-[900]">140,000+</span>
@@ -80,20 +90,20 @@ const AboutFindaMover = () => {
       </div>
 
       <div className="box">
-        <div className="naag  flex flex-col justifyenter ems-center h-[300px] relative border-black b">
-          <div className="absolute left-0 -transla2 translate-x-[0%] -translate-y-1/2 top-[50%] w-full in flex justify-enft-1/2 px-5 h-[300px] bg-[#fe5a50] flex-col py-16">
+        <div className="naag rounded-lg overflow-hidden flex flex-col justifyenter ems-center h-[300px] relative border-black b">
+          <div className="absolute left-0 -transla2 translate-x-[0%] -translate-y-1/2 top-[50%] w-full in bg-[#2b3457] flex justify-enft-1/2 px-5 h-[300px] flex-col py-16">
             <div className="flex gap- flex-col abslute">
               <span>
                 <BsTruck
                   size={170}
                   className="absolute top-5 right-5"
-                  color="#fe595048"
+                  color="#ffffff93"
                 />
               </span>
               <span className="lev">
-                <BsTruck size={50} color="#fe5a50" />
+                <BsTruck size={50} color="#fff" />
               </span>
-              <div className="side flex flex-col gap-5">
+              <div className="side flex flex-col gap-5 text-white">
                 <span className="text-[32px] font-[900]">300+</span>
                 <span className="w-3/4">
                   Removalists Australia wide currently active in our network
@@ -101,10 +111,18 @@ const AboutFindaMover = () => {
               </div>
             </div>
           </div>
-          <div className="relativ bottom-0 bord border-black flex flex-col justify-cen py-16 gap-2 mt- h-[300px] px-5 abolute bg-[#2b3457ab] text-white">
+
+          <div className="relativ bottom-0 bord border-black flex flex-col justify-cen py-16 gap-2 mt- h-[300px] px-5 abolute  text-black">
             <div className="flex gap- flex-col">
               <span>
-                <BsTruck size={50} color="#fff" />
+                <BsTruck
+                  size={170}
+                  className="absolute top-5 right-5"
+                  color="#fe5a5048"
+                />
+              </span>
+              <span>
+                <BsTruck size={50} color="#fe5a50" />
               </span>
               <div className="side flex flex-col gap-5">
                 <span className="text-[32px] font-[900]">300+</span>
@@ -118,20 +136,20 @@ const AboutFindaMover = () => {
       </div>
 
       <div className="box">
-        <div className="naag  flex flex-col justifyenter ems-center h-[300px] relative border-black b">
-          <div className="absolute left-0 -transla2 translate-x-[0%] -translate-y-1/2 top-[50%] w-full in flex justify-enft-1/2 px-5 h-[300px] bg-[#fe5a50] flex-col py-16">
+        <div className="naag rounded-lg overflow-hidden flex flex-col justifyenter ems-center h-[300px] relative border-black b">
+          <div className="absolute left-0 -transla2 translate-x-[0%] -translate-y-1/2 top-[50%] w-full in bg-[#2b3457] flex justify-enft-1/2 px-5 h-[300px] flex-col py-16">
             <div className="flex gap- flex-col abslute">
               <span>
                 <CgSmileMouthOpen
                   size={170}
                   className="absolute top-5 right-5"
-                  color="#fe595048"
+                  color="#ffffff93"
                 />
               </span>
               <span className="lev">
-                <CgSmileMouthOpen size={50} color="#fe5a50" />
+                <CgSmileMouthOpen size={50} color="#fff" />
               </span>
-              <div className="side flex flex-col gap-5">
+              <div className="side flex flex-col gap-5 text-white">
                 <span className="text-[32px] font-[900]">4.62/5</span>
                 <span className="w-3/4">
                   Average mover rating on our platform from Google.
@@ -139,12 +157,20 @@ const AboutFindaMover = () => {
               </div>
             </div>
           </div>
-          <div className="relativ bottom-0 bord border-black flex flex-col justify-cen py-16 gap-2 mt- h-[300px] px-5 abolute bg-[#2b3457ab] text-white">
+
+          <div className="relativ bottom-0 bord border-black flex flex-col justify-cen py-16 gap-2 mt- h-[300px] px-5 abolute">
             <div className="flex gap- flex-col">
               <span>
-                <CgSmileMouthOpen size={50} color="#fff" />
+                <CgSmileMouthOpen
+                  size={170}
+                  className="absolute top-5 right-5"
+                  color="#fe5a5048"
+                />
               </span>
-              <div className="side flex flex-col gap-5">
+              <span>
+                <CgSmileMouthOpen size={50} color="#fe5a50" />
+              </span>
+              <div className="side flex flex-col gap-5 text-black">
                 <span className="text-[32px] font-[900]">4.62/5</span>
                 <span className="w-3/4 side flex flex-col gap-5">
                   Average mover rating on our platform from Google.
@@ -156,20 +182,20 @@ const AboutFindaMover = () => {
       </div>
 
       <div className="box">
-        <div className="naag  flex flex-col justifyenter ems-center h-[300px] relative border-black b">
-          <div className="absolute left-0 -transla2 translate-x-[0%] -translate-y-1/2 top-[50%] w-full in flex justify-enft-1/2 px-5 h-[300px] bg-[#fe5a50] flex-col py-16">
+        <div className="naag rounded-lg overflow-hidden flex flex-col justifyenter ems-center h-[300px] relative border-black b">
+          <div className="absolute left-0 -transla2 translate-x-[0%] -translate-y-1/2 top-[50%] w-full in bg-[#2b3457] flex justify-enft-1/2 px-5 h-[300px] flex-col py-16">
             <div className="flex gap- flex-col abslute">
               <span>
                 <SlHourglass
                   size={170}
                   className="absolute top-5 right-5"
-                  color="#fe595048"
+                  color="#ffffff93"
                 />
               </span>
               <span className="lev">
-                <SlHourglass size={50} color="#fe5a50" />
+                <SlHourglass size={50} color="#fff" />
               </span>
-              <div className="side flex flex-col gap-5">
+              <div className="side flex flex-col gap-5 text-white">
                 <span className="text-[32px] font-[900]">9 Years</span>
                 <span className="w-3/4">
                   In operation and still the best choice for finding a mover.
@@ -177,12 +203,20 @@ const AboutFindaMover = () => {
               </div>
             </div>
           </div>
-          <div className="relativ bottom-0 bord border-black flex flex-col justify-cen py-16 gap-2 mt- h-[300px] px-5 abolute bg-[#2b3457ab] text-white">
+
+          <div className="relativ bottom-0 bord border-black flex flex-col justify-cen py-16 gap-2 mt- h-[300px] px-5 abolute ">
             <div className="flex gap- flex-col">
               <span>
-                <SlHourglass size={50} color="#fff" />
+                <SlHourglass
+                  size={170}
+                  className="absolute top-5 right-5"
+                  color="#fe5a5048"
+                />
               </span>
-              <div className="side flex flex-col gap-5">
+              <span>
+                <SlHourglass size={50} color="#fe5a50" />
+              </span>
+              <div className="side flex flex-col gap-5 text-black">
                 <span className="text-[32px] font-[900]">9 Years</span>
                 <span className="w-3/4 side flex flex-col gap-5">
                   In operation and still the best choice for finding a mover.
@@ -194,20 +228,20 @@ const AboutFindaMover = () => {
       </div>
 
       <div className="box">
-        <div className="naag  flex flex-col justifyenter ems-center h-[300px] relative border-black b">
-          <div className="absolute left-0 -transla2 translate-x-[0%] -translate-y-1/2 top-[50%] w-full in flex justify-enft-1/2 px-5 h-[300px] bg-[#fe5a50] flex-col py-16">
+        <div className="naag rounded-lg overflow-hidden flex flex-col justifyenter ems-center h-[300px] relative border-black b">
+          <div className="absolute left-0 -transla2 translate-x-[0%] -translate-y-1/2 top-[50%] w-full in bg-[#2b3457] flex justify-enft-1/2 px-5 h-[300px] flex-col py-16">
             <div className="flex gap- flex-col abslute">
               <span>
                 <FaTruckLoading
                   size={170}
                   className="absolute top-5 right-5"
-                  color="#fe595048"
+                  color="#ffffff93"
                 />
               </span>
               <span className="lev">
-                <FaTruckLoading size={50} color="#fe5a50" />
+                <FaTruckLoading size={50} color="#fff" />
               </span>
-              <div className="side flex flex-col gap-5">
+              <div className="side flex flex-col gap-5 text-white">
                 <span className="text-[32px] font-[900]">$2m+</span>
                 <span className="w-3/4">
                   Per month in booked moves through the use of our platform.
@@ -215,10 +249,18 @@ const AboutFindaMover = () => {
               </div>
             </div>
           </div>
-          <div className="relativ bottom-0 bord border-black flex flex-col justify-cen py-16 gap-2 mt- h-[300px] px-5 abolute bg-[#2b3457ab] text-white">
+
+          <div className="relativ bottom-0 bord border-black flex flex-col justify-cen py-16 gap-2 mt- h-[300px] px-5 abolute">
             <div className="flex gap- flex-col">
+            <span>
+                <FaTruckLoading
+                  size={170}
+                  className="absolute top-5 right-5"
+                  color="#fe5a5048"
+                />
+              </span>
               <span>
-                <FaTruckLoading size={50} color="#fff" />
+                <FaTruckLoading size={50} color="#fe5a50" />
               </span>
               <div className="side flex flex-col gap-5">
                 <span className="text-[32px] font-[900]">$2m+</span>
@@ -232,20 +274,20 @@ const AboutFindaMover = () => {
       </div>
 
       <div className="box">
-        <div className="naag  flex flex-col justifyenter ems-center h-[300px] relative border-black b">
-          <div className="absolute left-0 -transla2 translate-x-[0%] -translate-y-1/2 top-[50%] w-full in flex justify-enft-1/2 px-5 h-[300px] bg-[#fe5a50] flex-col py-16">
+        <div className="naag rounded-lg overflow-hidden flex flex-col justifyenter ems-center h-[300px] relative border-black b">
+          <div className="absolute left-0 -transla2 translate-x-[0%] -translate-y-1/2 top-[50%] w-full in bg-[#2b3457] text-white flex justify-enft-1/2 px-5 h-[300px] flex-col py-16">
             <div className="flex gap- flex-col abslute">
               <span>
                 <CiStar
                   size={170}
                   className="absolute top-5 right-5"
-                  color="#fe595048"
+                  color="#ffffff93"
                 />
               </span>
               <span className="lev">
-                <CiStar size={50} color="#fe5a50" />
+                <CiStar size={50} color="#fff" />
               </span>
-              <div className="side flex flex-col gap-5">
+              <div className="side flex flex-col gap-5 text-white">
                 <span className="text-[32px] font-[900]">20,000+</span>
                 <span className="w-3/4">
                   Mover reviews left by genuine FindaMover customers.
@@ -253,10 +295,17 @@ const AboutFindaMover = () => {
               </div>
             </div>
           </div>
-          <div className="relativ bottom-0 bord border-black flex flex-col justify-cen py-16 gap-2 mt- h-[300px] px-5 abolute bg-[#2b3457ab] text-white">
+          <div className="relativ bottom-0 bord border-black flex flex-col justify-cen py-16 gap-2 mt- h-[300px] px-5 abolute">
             <div className="flex gap- flex-col">
+            <span>
+                <CiStar
+                  size={170}
+                  className="absolute top-5 right-5"
+                  color="#fe5a5048"
+                />
+              </span>
               <span>
-                <CiStar size={50} color="#fff" />
+                <CiStar size={50} color="#fe5a50" />
               </span>
               <div className="side flex flex-col gap-5">
                 <span className="text-[32px] font-[900]">20,000+</span>

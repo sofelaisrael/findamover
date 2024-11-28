@@ -30,6 +30,7 @@ body {
   box-sizing: border-box;
   font-family: "quicksandbold";
   background: #e8e8ea;
+  overflow-x: hidden;
 }
 .herocontext .content {
   font-family: "poppins";
@@ -103,7 +104,7 @@ body {
 .show-text{
   top: 50%;
   opacity: 1;
-  transition: all .7s 300ms cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all .5s 300ms cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 
@@ -133,7 +134,7 @@ body {
 
 .naag .in {
   visibility: hidden;
-  background: white;
+  /* background: white; */
   /* transform: translate(-50%, -50%); */
   color: black;
 }
@@ -196,4 +197,9 @@ body {
  }
  .bod:hover{
   background-size: 120%;
+ }
+
+
+ .img{
+  background-position: 70% 40%;
  }
