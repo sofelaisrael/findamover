@@ -207,7 +207,7 @@ const Hero = () => {
       </div> */}
 
       <div className="herosection flex flex-col relative overflow-x-hidden">
-        <div className="marquee w-fit relative bottom-0 flex h-[200px] max-md:h-[100px] items-end max-md:px-5 px-20 max-xl:h-[130px] mb-2 text-[80px] max-xl:text-[65px] max-md:text-[50px] max-xl:leading-[65px] max-md:leading-[50px]">
+        <div className="marquee w-fit relative bottom-0 flex h-[200px] max-md:h-[60px] items-end max-md:px-5 px-20 max-xl:h-[130px] mb-2 text-[80px] max-xl:text-[60px] max-md:text-[32px] max-xl:leading-[60px] max-md:leading-[30px]">
           <span className="dynamic opacity-0 absolute top-[25%] max-md:to0%] show-text">
             Affordable
           </span>
@@ -220,7 +220,7 @@ const Hero = () => {
         </div>
 
         <div className="hero lg:h-[500px] bg-[url('./assets/moveboxes.webp')] max-lg:pb-10 relative bg-cover max-md:px-5 bg-center px-20 ">
-          <div className="text-[80px] leading-[85px] max-xl:leading-[65px] max-md:leading-[50px] w-2/3 max-lg:w-full text-white max-xl:text-[65px] max-md:text-[50px]">
+          <div className="text-[80px] leading-[85px] max-xl:leading-[60px] max-md:leading-[32px] w-2/3 max-lg:w-full text-white max-xl:text-[60px] max-md:text-[32px]">
             Moving Solution You'll Ever Need
           </div>
 
@@ -285,8 +285,8 @@ const Hero = () => {
           </div> */}
 
           {/*  */}
-          <form className="lg:absolute getaquote shadow-xl drop-shadow-2xl -top-40 w-[450px] max-xl:w-[370px] max-lg:w-full max-lg:mt-10  right-10 border border-gray-300 top- p-10 bg-white rounded-xl ">
-            <div className="title text-3xl ">Request A Quote</div>
+          <form className="lg:absolute getaquote shadow-xl drop-shadow-2xl -top-40 w-[450px] max-xl:w-[370px] max-lg:w-full max-lg:mt-10  right-10 border border-gray-300 top- p-10 bg-white rounded-xl max-md:px-5">
+            <div className="title text-3xl max-md:text-[24px]">Request A Quote</div>
 
             <div className="my-5 border h-[50px]">
               <input
@@ -345,7 +345,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="quotes flex items-center cursor-pointer pl-2 gap-3 hover:gap-5 bg-[#fe5a50] text-white text-[18px] transition-all duration-200 border-[#fe5a50] w-[170px] mt-5 py-2 rounded-lg border-4 ">
+            <div className="quotes flex items-center cursor-pointer pl-2 gap-3 hover:gap-5 bg-[#fe5a50] text-white text-[18px] transition-all duration-200 border-[#fe5a50] max-md:text-[14px] max-md:gap-1 max-md:w-[130px] w-[170px] mt-5 py-2 rounded-lg border-4 ">
               <span> Get Quotes</span>
               <BiRightArrowAlt size={25} />
             </div>

@@ -3,7 +3,7 @@ import Logo from "../assets/findamover_logo.svg";
 
 const Footer = () => {
   return (
-    <div className="footer grid grid-cols-6 p-20 gap-10 max-xl:grid-cols-3 max-md:px-10 max-md:grid-cols-2">
+    <div className="footer grid grid-cols-6 p-20 gap-10 max-xl:grid-cols-3 max-md:px-10 max-sm:px-5 max-md:grid-cols-2">
       <div className="col-span-1 flex flex-col gap-3">
         <div className="logo w-36">
           <img src={Logo} alt="" />

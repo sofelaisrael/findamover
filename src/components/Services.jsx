@@ -3,11 +3,11 @@ import React from "react";
 const Services = () => {
   return (
     <>
-      <div className="head w-1/2 max-md:w-full leading-[46px] max-md:text-[32px] max-md:leading-[30px] font-['quicksand'] px-20 pt-28 text-[50px] max-md:px-10">
+      <div className="head w-1/2 max-md:w-full leading-[46px] max-md:text-[32px] max-md:leading-[30px] font-['quicksand'] px-20 pt-28 max-sm:px-5 text-[50px] max-md:px-10 max-lg:pt-20 max-md:pt-10">
         Removalists and Moving Services
       </div>
 
-      <div className="services grid grid-cols-4 gap-20 p-20 40 max-lg:grid-cols-2 max-md:px-10">
+      <div className="services grid grid-cols-4 gap-20 p-20 40 max-lg:grid-cols-2 max-md:px-10 max-md:p-10 max-sm:p-5">
         <div className="col-span-2 h-[400px] max-md:h-[250px] bg-[url('./assets/long.jpg')] bg-cover bg-center rounded-xl group relative transition-all duration-500 bod">
           <div className="absolute w-[80%] max-md:w-full innerbod z-[100000] h-[80px] max-md:h-[50px] overflow-hidden rounded-2xl bg-white -traslate-y-1/2 -translate-x-1/2 top-[calc(100%-50px)] max-md:top-[calc(100%-25px)] left-[50%] max-md:group-hover:h-[250px] group-hover:h-[250px] transition-all duration-200">
             <div className="text-[32px] text-center max-md:text-[23px] font-['quicksand'] max-md:pt-2 py-5 titleshow">
