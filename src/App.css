@@ -164,7 +164,7 @@ body {
 }
 
 .box {
-  box-shadow: 0 20px 13px rgb(0 0 0 / 0.03), 0 8px 5px rgb(0 0 0 / 0.08);
+  box-shadow: 0 20px 13px rgb(0 0 0 / 0.19), 0 8px 5px rgb(0 0 0 / 0.18);
   border-radius: 10px;
 }
 .drop-shade {

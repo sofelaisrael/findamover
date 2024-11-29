@@ -41,7 +41,7 @@ const AboutFindaMover = () => {
   });
 
   return (
-    <div className="grid grid-cols-3 place-items-center gap-10 p-20 max-lg:grid-cols-2 max-s max-md:p-10 max-sm:grid-cols-1">
+    <div className="grid grid-cols-3 place-items-center gap-10 p-20 max-lg:grid-cols-2 max-md:p-5 max-sm:grid-cols-1">
 
       <div className="box">
         <div className="naag rounded-lg overflow-hidden flex flex-col justifyenter ems-center h-[300px] relative border-black b">
